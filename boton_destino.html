@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión - SIAE</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to top, #1e3a8a, #bfa760);
+        }
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            padding: 30px;
+            width: 500px;
+        }
+        .container h1 {
+            margin-bottom: 30px;
+            font-size: 24px;
+            color: #1e3a8a;
+        }
+        .input-field {
+            margin-bottom: 20px;
+        }
+        .input-field input {
+            width: 90%;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .button {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #1e3a8a;
+            color: white;
+            font-size: 18px;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #142659;
+        }
+    </style>
+    <script>
+        function validarCredenciales() {
+            // Obtener valores de los campos
+            const usuario = document.getElementById("usuario").value;
+            const contraseña = document.getElementById("contraseña").value;
+
+            // Validar credenciales
+            if (usuario === "321045694" && contraseña === "03122005") {
+                // Redirigir a la página anterior
+                window.location.href = "validacion_certificados.html";
+            } else {
+                // Mostrar mensaje de error
+                alert("Usuario o contraseña incorrectos");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenido al SIAE</h1>
+        <div class="input-field">
+            <input type="text" id="usuario" placeholder="Usuario" required>
+        </div>
+        <div class="input-field">
+            <input type="password" id="contraseña" placeholder="Contraseña" required>
+        </div>
+        <button class="button" onclick="validarCredenciales()">Acceder</button>
+    </div>
+</body>
+</html>
