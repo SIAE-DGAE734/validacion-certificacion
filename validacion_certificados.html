@@ -180,7 +180,7 @@
                 </div>
             </div>
             <div class="button-container">
-                <a href="certificado.pdf" class="pdf-button" target="_blank">Descargar PDF</a>
+                <button id="downloadPdfButton" class="pdf-button">Descargar PDF</button>
             </div>
             <div class="footer">
                 <p>Si hay algún dato incorrecto o alteración, por favor acudir directamente a ventanillas en control escolar.</p>
@@ -190,6 +190,14 @@
             </div>
         </div>
     </div>
+    <script>
+        document.getElementById('downloadPdfButton').addEventListener('click', function() {
+            const link = document.createElement('a');
+            link.href = 'certificado.pdf'; // Reemplaza con la ruta de tu archivo PDF
+            link.download = 'certificado-siae.pdf'; // Nombre del archivo que se descargará
+            link.click();
+        });
+    </script>
 </body>
 </html>
 
